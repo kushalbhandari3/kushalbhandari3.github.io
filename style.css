@@ -1,0 +1,92 @@
+/* Set overall font and background color */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9; /* Light grey background */
+    color: #333;
+}
+
+/* Style for the header section */
+header {
+    background-color: #003366; /* Navy Blue */
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+}
+
+/* Profile picture styling */
+.profile {
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    margin-bottom: 10px;
+}
+
+/* Navigation bar styling */
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+/* Hover effect for nav links */
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* About Me Section */
+.about-me {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about-me h2 {
+    color: #003366; /* Navy Blue */
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.about-me p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* What I Am Looking For Section */
+.what-i-am-looking-for {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    margin: 20px auto;
+    max-width: 900px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.what-i-am-looking-for h2 {
+    color: #003366; /* Navy Blue */
+    font-size: 30px;
+    margin-bottom: 15px;
+}
+
+.what-i-am-looking-for p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #666;
+}
