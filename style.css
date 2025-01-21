@@ -216,7 +216,7 @@ h2 {
 }
 
 .eca-project .flyer-img {
-    width: 30%; /* Adjusts the width of each image */
+    width: 22%; /* Adjusts the width of each image to make them smaller */
     height: auto;
     border-radius: 8px; /* Optional: adds rounded corners for a smoother look */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow to images */
