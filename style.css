@@ -212,13 +212,14 @@ h2 {
 .flyer-container {
     display: flex; /* Aligns images in a row */
     justify-content: center; /* Centers images */
-    gap: 15px; /* Adds spacing between images */
+    gap: 10px; /* Adds spacing between images */
     flex-wrap: wrap; /* Ensures responsiveness on smaller screens */
 }
 
 .flyer {
-    width: 30%; /* Ensures images are equal in size */
-    max-width: 300px; /* Prevents them from getting too big */
-    border-radius: 10px; /* Gives them a smooth, modern look */
-    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+    width: 25%; /* Makes each flyer smaller */
+    max-width: 200px; /* Prevents them from getting too big */
+    height: auto; /* Keeps the aspect ratio correct */
+    border-radius: 8px; /* Gives them smooth edges */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
 }
