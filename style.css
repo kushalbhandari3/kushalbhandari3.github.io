@@ -202,9 +202,9 @@ h2 {
 }
 
 .project-image {
-    width: 80%; /* Adjusts the image to 80% of the container width */
-    max-width: 400px; /* Ensures it doesn’t exceed 400px */
-    display: block;
-    margin: 10px auto;
-    border-radius: 10px;
+    width: 80%; /* Adjusts image to 80% of the container width */
+    max-width: 500px; /* Ensures it does not exceed 500px */
+    display: block; /* Centers the image */
+    margin: 10px auto; /* Adds spacing around it */
+    border-radius: 10px; /* Optional: Rounds corners for a sleek look */
 }
