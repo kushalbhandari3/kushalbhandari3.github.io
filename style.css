@@ -223,3 +223,16 @@ h2 {
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
 }
 
+.pdf-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.pdf-viewer {
+    width: 80%; /* Adjust to fit nicely on all screens */
+    max-width: 800px; /* Prevents it from getting too large */
+    height: 500px; /* Adjust height as needed */
+    border: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for aesthetics */
+}
