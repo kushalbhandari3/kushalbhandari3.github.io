@@ -230,9 +230,7 @@ h2 {
 }
 
 .pdf-viewer {
-    width: 100%; /* Ensure it takes up the full width of its container */
-    max-width: 1000px; /* Allow it to be larger but not exceed 1000px width */
-    height: 700px; /* Increase height for better readability */
-    border: none;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow around the PDF */
+    width: 100%; /* Ensures it takes up full width of the container */
+    height: 800px; /* Set to match the height from your other embedded document */
+    border: none; /* Removes the border */
 }
