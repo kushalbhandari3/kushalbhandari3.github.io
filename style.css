@@ -217,9 +217,9 @@ h2 {
 }
 
 .flyer {
-    width: 25%; /* Makes each flyer smaller */
-    max-width: 200px; /* Prevents them from getting too big */
-    height: auto; /* Keeps the aspect ratio correct */
-    border-radius: 8px; /* Gives them smooth edges */
+    width: 150px; /* Set a small fixed width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Smooth edges */
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
 }
+
