@@ -208,3 +208,21 @@ h2 {
     margin: 10px auto;
     border-radius: 10px;
 }
+.eca-project .flyers {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.eca-project .flyer-img {
+    width: 30%; /* Adjusts the width of each image */
+    height: auto;
+    border-radius: 8px; /* Optional: adds rounded corners for a smoother look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: adds a subtle shadow to images */
+    transition: transform 0.3s ease-in-out; /* Optional: adds hover effect */
+}
+
+.eca-project .flyer-img:hover {
+    transform: scale(1.05); /* Optional: slightly zooms in the image on hover */
+}
