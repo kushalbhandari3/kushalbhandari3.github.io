@@ -3,77 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Kushal Bhandari | Portfolio</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Link to External Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header Section with Profile -->
     <header>
-        <div class="container">
-            <h1>Welcome to My Portfolio</h1>
-            <nav>
-                <a href="index.html">Home</a> |
-                <a href="resume.pdf" target="_blank">Resume</a> |
-                <a href="#courseworks">Courseworks</a> |
-                <a href="#ecaprojects">Extra-Curriculars</a>
-            </nav>
+        <div class="profile">
+            <img src="kush.jpg" alt="Kushal Bhandari" class="profile-pic">
+            <h1>Kushal Bhandari</h1>
+            <p>Senior at Springfield College | Business & Computer Science</p>
         </div>
+        
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="resume.pdf" target="_blank">Resume</a>
+            <a href="#courseworks">Courseworks</a>
+            <a href="#ecaprojects">Extra-Curriculars</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
+
+    <!-- About Me Section -->
+    <section class="about-me">
+        <h2>About Me</h2>
+        <p>I'm Kushal Bhandari, a senior at Springfield College pursuing a dual major in Business Management and Computer Science. With a strong foundation in business, finance, and technology, I combine leadership, analytical expertise, and technical skills to drive meaningful insights and innovation.</p>
+        
+        <p>Proficient in C++, Python, and MySQL, I specialize in data extraction and consumer behavior analysis to inform strategic decision-making. Growing up in Nepal, I honed my leadership skills early, from leading a Red Cross Circle to serving as the Student Trustee at Springfield College, MA.</p>
+        
+        <p>Passionate about Data Analysis, FinTech, Product Management, Business Strategy, IT Consulting, and technology-driven solutions, I thrive in fast-paced environments that encourage continuous learning and impactful contributions.</p>
+    </section>
 
     <!-- Main Content -->
     <main>
-        <div class="container">
-            <!-- Courseworks Section -->
-            <section id="courseworks" class="section">
-                <h2>Courseworks</h2>
-                <div class="grid-container">
-                    <!-- Individual Coursework Items -->
-                    <div class="coursework">
-                        <h3>Human Resource Management (BUSM-379)</h3>
-                        <p>This project explores Netflix's innovative HR practices...</p>
-                        <iframe src="https://docs.google.com/presentation/d/e/..." frameborder="0" allowfullscreen title="HR Management Presentation"></iframe>
-                    </div>
-                    <div class="coursework">
-                        <h3>Business Analytics (BUSM-310)</h3>
-                        <p>Analyzed Twitter's rebranding and revenue strategies...</p>
-                        <iframe src="https://docs.google.com/presentation/d/e/..." frameborder="0" allowfullscreen title="Business Analytics Presentation"></iframe>
-                    </div>
-                    <!-- Add more coursework items as needed -->
+        <!-- Courseworks Section -->
+        <section id="courseworks" class="section">
+            <h2>Courseworks</h2>
+            <div class="grid-container">
+                <div class="coursework">
+                    <h3>Human Resource Management (BUSM-379)</h3>
+                    <p>This project explores Netflix's innovative HR practices...</p>
+                    <iframe src="https://docs.google.com/presentation/d/e/..." frameborder="0" allowfullscreen></iframe>
                 </div>
-            </section>
-
-            <!-- Extra-Curricular Activities Section -->
-            <section id="ecaprojects" class="section">
-                <h2>Extra-Curricular Activities</h2>
-                <div class="grid-container">
-                    <!-- Student Trustee Project -->
-                    <div class="eca-project">
-                        <h3>Student Trustee</h3>
-                        <p><b>Title:</b> Dismantling Break Housing Anxiety</p>
-                        <p><b>Objective:</b> To address housing stress for students...</p>
-                        <img src="event-image.png" alt="Break Housing Waiver Project">
-                    </div>
-
-                    <!-- Business Club Activities -->
-                    <div class="eca-project">
-                        <h3>Business Club President</h3>
-                        <p>Spearheaded business-related programs and created flyers...</p>
-                        <div class="flyer-container">
-                            <img src="flyer1.png" alt="Flyer 1">
-                            <img src="flyer2.png" alt="Flyer 2">
-                        </div>
-                    </div>
-                    <!-- Add more extra-curricular projects as needed -->
+                <div class="coursework">
+                    <h3>Business Analytics (BUSM-310)</h3>
+                    <p>Analyzed Twitter's rebranding and revenue strategies...</p>
+                    <iframe src="https://docs.google.com/presentation/d/e/..." frameborder="0" allowfullscreen></iframe>
                 </div>
-            </section>
-        </div>
+                <!-- Add more courseworks here -->
+            </div>
+        </section>
+
+        <!-- Extra-Curricular Activities Section -->
+        <section id="ecaprojects" class="section">
+            <h2>Extra-Curricular Activities</h2>
+            <div class="grid-container">
+                <div class="eca-project">
+                    <h3>Student Trustee</h3>
+                    <p><b>Title:</b> Dismantling Break Housing Anxiety</p>
+                    <p><b>Objective:</b> To address housing stress for students...</p>
+                    <img src="event-image.png" alt="Break Housing Waiver">
+                </div>
+                <div class="eca-project">
+                    <h3>Business Club President</h3>
+                    <p>Spearheaded business-related programs and created flyers...</p>
+                    <div class="flyer-container">
+                        <img src="flyer1.png" alt="Flyer 1">
+                        <img src="flyer2.png" alt="Flyer 2">
+                    </div>
+                </div>
+                <!-- Add more extra-curricular activities here -->
+            </div>
+        </section>
+
+        <!-- What I Am Looking For Section -->
+        <section class="what-i-am-looking-for">
+            <h2>What I Am Looking For</h2>
+            <p>I am seeking opportunities in <b>Data Analysis, FinTech, and Product Management</b>, where I can apply my technical and business skills to drive meaningful change. If you're looking for someone who is passionate about innovation and technology-driven solutions, let’s connect!</p>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© 2025 [Your Name]. All Rights Reserved.</p>
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-links">
+            <a href="https://www.linkedin.com/in/kushalbhandarii/" target="_blank">
+                <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+                LinkedIn
+            </a>
+            <a href="mailto:bkushal14@gmail.com">
+                <img src="https://cdn-icons-png.flaticon.com/512/281/281769.png" alt="Gmail">
+                Gmail
+            </a>
         </div>
-    </footer>
+    </section>
 </body>
 </html>
