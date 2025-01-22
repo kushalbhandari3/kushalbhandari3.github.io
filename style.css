@@ -1,229 +1,78 @@
-/* Set overall font and background color */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9; /* Light grey background */
-    color: #333;
-}
-
-/* Style for the header section */
-header {
-    background-color: #003366; /* Navy Blue */
-    color: white;
-    padding: 20px 10px;
-    text-align: center;
-}
-
-/* Profile picture styling */
-.profile {
-    margin-bottom: 20px;
-}
-
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid white;
-    margin-bottom: 10px;
-}
-
-/* Navigation bar styling */
-nav {
-    margin-top: 10px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: 500;
-    font-size: 18px;
-}
-
-/* Hover effect for nav links */
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* About Me Section */
-.about-me {
-    background-color: #ffffff;
-    padding: 40px 20px;
-    margin: 20px auto;
-    max-width: 900px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.about-me h2 {
-    color: #003366; /* Navy Blue */
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-.about-me p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #666;
-}
-
-/* What I Am Looking For Section */
-.what-i-am-looking-for {
-    background-color: #ffffff;
-    padding: 40px 20px;
-    margin: 20px auto;
-    max-width: 900px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.what-i-am-looking-for h2 {
-    color: #003366; /* Navy Blue */
-    font-size: 30px;
-    margin-bottom: 15px;
-}
-
-.what-i-am-looking-for p {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #666;
-}
-
-/* General Styles */
-body {
-    font-family: 'Poppins', sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    text-align: center;
-    margin: 0;
-    padding: 0;
 }
 
-/* Header */
 header {
-    background-color: #0a1931;
-    color: white;
-    padding: 30px 20px;
-}
-
-.profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 3px solid white;
-    margin-bottom: 10px;
-}
-
-h1 {
-    font-size: 28px;
-    margin: 0;
-}
-
-nav {
-    margin-top: 15px;
+    background: #2c3e50;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
 }
 
 nav a {
-    color: white;
+    color: #fff;
     text-decoration: none;
-    font-weight: bold;
     margin: 0 15px;
-    font-size: 18px;
 }
 
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Sections */
 section {
-    background: white;
+    max-width: 900px;
     margin: 30px auto;
     padding: 20px;
-    max-width: 800px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-    color: #0a1931;
-    font-size: 24px;
+    border-bottom: 2px solid #2c3e50;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
 }
 
-/* Contact Section */
-#contact {
-    margin-top: 50px;
+.project {
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #ecf0f1;
+    border-radius: 5px;
 }
 
-.contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin-top: 15px;
+.project iframe {
+    width: 100%;
+    height: 400px;
+    border: none;
 }
 
-.contact-links a {
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    color: #0a1931;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.contact-links img {
-    width: 35px;
-    height: 35px;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
-}
-
-.contact-links img:hover {
-    transform: scale(1.2);
-}
-.coursework {
-    background-color: #f4f4f4;
-    padding: 20px;
-    border-radius: 8px;
-    margin: 20px 0;
-}
-
-.coursework h3 {
-    font-family: 'Roboto', sans-serif;
-    color: navy;
-}
-
-.project-image {
-    width: 80%; /* Adjusts the image to 80% of the container width */
-    max-width: 400px; /* Ensures it doesn’t exceed 400px */
+.project img {
+    max-width: 100%;
+    height: auto;
     display: block;
     margin: 10px auto;
-    border-radius: 10px;
+    border-radius: 5px;
 }
-.eca-project .flyers {
+
+.flyers {
     display: flex;
     justify-content: space-between;
-    gap: 10px; /* Reduced the space between the images */
-    margin-top: 20px;
-    flex-wrap: wrap; /* Allows the images to wrap to the next line if needed */
+    flex-wrap: wrap;
 }
 
-.eca-project .flyer-img {
-    width: 30%; /* Reduced the width to make images smaller */
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
+.flyer-img {
+    width: 30%;
+    border-radius: 5px;
 }
 
-.eca-project .flyer-img:hover {
-    transform: scale(1.05);
+@media (max-width: 768px) {
+    .flyers {
+        flex-direction: column;
+        align-items: center;
+    }
+    .flyer-img {
+        width: 80%;
+        margin-bottom: 15px;
+    }
 }
