@@ -23,8 +23,8 @@ header {
 }
 
 .profile-pic {
-    width: 90px; /* Reduced size */
-    height: 90px;
+    width: 150px; /* Reduced size */
+    height: 150px;
     border-radius: 50%;
     border: 2px solid white;
     object-fit: cover;
