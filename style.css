@@ -1,63 +1,172 @@
-/* General Styling */
+/* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: center;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Header */
-header {
-    background-color: #0a1931;
-    color: white;
-    padding: 20px;
+h1, h2, h3 {
+    font-family: 'Merriweather', serif;
+    color: #2c3e50;
 }
-/* Profile Section */
-.profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 10px;
+
+a {
+    text-decoration: none;
+    color: #3498db;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+/* Header Section */
+header {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #fff;
+    padding: 20px 10%;
+    text-align: center;
 }
 
 .profile-pic {
-    width: 150px; /* Reduced size */
+    width: 150px;
     height: 150px;
     border-radius: 50%;
-    border: 2px solid white;
-    object-fit: cover;
-    margin-bottom: 5px;
+    border: 5px solid #3498db;
+    margin-bottom: 15px;
 }
 
-/* Contact Links */
+header h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    color: #fff;
+    margin: 0 15px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #3498db;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: #fff;
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.cta-button {
+    background: #fff;
+    color: #3498db;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #3498db;
+    color: #fff;
+}
+
+/* About Me Section */
+.about-me {
+    padding: 80px 10%;
+    background: #fff;
+}
+
+.about-me h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.about-me p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* What I Am Looking For Section */
+.looking-for {
+    padding: 80px 10%;
+    background: #f4f4f9;
+}
+
+.looking-for h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.looking-for p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Contact Section */
+#contact {
+    padding: 80px 10%;
+    background: #fff;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
 .contact-links {
     display: flex;
     justify-content: center;
-    align-items: center;
-    gap: 15px;
-    margin-top: 10px;
+    gap: 20px;
 }
 
-.contact-links a {
+.contact-link {
     display: flex;
     align-items: center;
-    font-size: 14px;
-    color: #0a1931;
-    text-decoration: none;
-    font-weight: bold;
+    background: #3498db;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
-.contact-links img {
-    width: 25px; /* Adjusted icon size */
-    height: 25px;
-    margin-right: 5px;
-    transition: transform 0.3s ease;
+.contact-link:hover {
+    background: #2980b9;
 }
 
-.contact-links img:hover {
-    transform: scale(1.1);
+.contact-link i {
+    margin-right: 10px;
 }
 
 /* Sections */
