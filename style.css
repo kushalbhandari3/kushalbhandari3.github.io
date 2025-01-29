@@ -31,10 +31,10 @@ header {
 }
 
 .profile-pic {
-    width: 150px;
-    height: 150px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    border: 5px solid #3498db;
+    border: 15px solid #3498db;
     margin-bottom: 15px;
 }
 
