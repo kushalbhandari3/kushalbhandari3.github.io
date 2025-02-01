@@ -1,3 +1,12 @@
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
 /* Header Section */
 header {
     background: linear-gradient(135deg, #2c3e50, #34495e);
@@ -9,7 +18,7 @@ header {
     align-items: center;
 }
 
-/* Centering Profile Picture & Name */
+/* Profile Section */
 .profile {
     display: flex;
     flex-direction: column;
@@ -17,36 +26,35 @@ header {
     text-align: center;
 }
 
-/* Profile Picture Container */
+/* Profile Picture Styling */
 .profile-pic-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 170px; /* Slightly larger */
+    height: 170px;
     border-radius: 50%;
-    padding: 8px;
     background: linear-gradient(135deg, #3498db, #8e44ad);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Profile Picture */
 .profile-pic {
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: 100%;
     border-radius: 50%;
-    border: 4px solid #fff;
+    object-fit: cover; /* Maintains aspect ratio */
+    border: 3px solid #fff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .profile-pic:hover {
-    transform: scale(1.05);
+    transform: scale(1.08);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Name Styling (Harmonized Color) */
-header h1 {
-    font-size: 2.8rem;
-    margin: 20px 0 10px;
-    color: #ffcc33; /* Soft gold to complement the dark background */
+/* Name Styling */
+.name {
+    font-size: 2.5rem;
+    margin: 15px 0 5px;
+    color: #f39c12; /* Warm, sophisticated gold */
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -67,10 +75,62 @@ nav a {
     margin: 0 15px;
     font-size: 1.1rem;
     transition: color 0.3s ease;
+    text-decoration: none;
 }
 
 nav a:hover {
-    color: #ffcc33; /* Matches name color */
+    color: #f39c12;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 50px 10%;
+    background: #ecf0f1;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #f39c12;
+    color: #fff;
+    border-radius: 25px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #e67e22;
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+    padding: 50px 10%;
+    background: #2c3e50;
+    color: white;
+}
+
+.contact-links a {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.contact-links a:hover {
+    color: #f39c12;
 }
 /* Hero Section */
 .hero {
