@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </head>
 <body>
     <header>
@@ -29,11 +32,35 @@
             <iframe src="Predicting_Credit_Card.pdf" width="100%" height="800px" style="border: none;"></iframe>
         </div>
         
-        <!-- Advance Python Programming -->
+        <!-- Paint Calculator Project -->
         <div class="coursework">
-            <h3><b>Advance Python Programming</b></h3>
-            <p>Performed Data Wrangling, Manipulation, Data Cleaning, Normalization, and Sorting using Python programming.</p>
-            <iframe src="Advance Python Programming.pdf" width="100%" height="800px" style="border: none;"></iframe>
+            <h3><b>Paint Calculator (Python)</b></h3>
+            <p>This project is a Python-based Paint Calculator that helps users determine the amount of paint needed based on the total wall space and paint cost per gallon. The program ensures user input validation by handling incorrect entries and guiding users to enter valid data.</p>
+            
+            <!-- "Run in Colab" Button -->
+            <a href="https://colab.research.google.com/github/kushalbhandari3/Python-Projects/blob/main/Paint_Estimator.ipynb" target="_blank">
+                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Run in Colab">
+            </a>
+            
+            <!-- Code Display with Highlight.js -->
+            <pre><code class="language-python">
+        # Paint Calculator
+        def calculate_paint():
+            try:
+                wall_space = float(input("Enter total wall space in square feet: "))
+                paint_cost = float(input("Enter paint cost per gallon: "))
+        
+                gallons_needed = wall_space / 400  # Assuming 1 gallon covers 400 sq ft
+                total_cost = gallons_needed * paint_cost
+        
+                print(f"Gallons Needed: {gallons_needed:.2f}")
+                print(f"Total Paint Cost: ${total_cost:.2f}")
+            
+            except ValueError:
+                print("Invalid input. Please enter numerical values.")
+        
+        calculate_paint()
+            </code></pre>
         </div>
     </section>
 
