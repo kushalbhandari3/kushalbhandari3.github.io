@@ -34,34 +34,22 @@
         
         <!-- Paint Calculator Project -->
         <div class="coursework">
-            <h3><b>Paint Calculator (Python)</b></h3>
-            <p>This project is a Python-based Paint Calculator that helps users determine the amount of paint needed based on the total wall space and paint cost per gallon. The program ensures user input validation by handling incorrect entries and guiding users to enter valid data.</p>
-            
-            <!-- "Run in Colab" Button -->
-            <a href="https://colab.research.google.com/github/kushalbhandari3/Python-Projects/blob/main/Paint_Estimator.ipynb" target="_blank">
-                <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Run in Colab">
-            </a>
-            
-            <!-- Code Display with Highlight.js -->
-            <pre><code class="language-python">
-        # Paint Calculator
-        def calculate_paint():
-            try:
-                wall_space = float(input("Enter total wall space in square feet: "))
-                paint_cost = float(input("Enter paint cost per gallon: "))
+            <h3><b>Paint Calculator</b></h3>
+            <p>This project calculates the amount of paint needed based on total wall space and paint cost per gallon.</p>
         
-                gallons_needed = wall_space / 400  # Assuming 1 gallon covers 400 sq ft
-                total_cost = gallons_needed * paint_cost
+            <!-- User Input Form -->
+            <label for="wall-area">Total Wall Area (sq ft):</label>
+            <input type="number" id="wall-area" placeholder="Enter wall area">
         
-                print(f"Gallons Needed: {gallons_needed:.2f}")
-                print(f"Total Paint Cost: ${total_cost:.2f}")
-            
-            except ValueError:
-                print("Invalid input. Please enter numerical values.")
+            <label for="paint-cost">Cost per Gallon ($):</label>
+            <input type="number" id="paint-cost" placeholder="Enter cost per gallon">
         
-        calculate_paint()
-            </code></pre>
+            <button onclick="calculatePaint()">Calculate</button>
+        
+            <!-- Result Display -->
+            <p id="paint-result"></p>
         </div>
+
     </section>
 
     <!-- Software & Technical Projects -->
@@ -106,5 +94,23 @@
             </div>
         </div>
     </section>
+<script>
+function calculatePaint() {
+    let wallArea = document.getElementById("wall-area").value;
+    let paintCost = document.getElementById("paint-cost").value;
+    
+    // Paint Coverage (Assumption: 1 Gallon Covers 350 sq ft)
+    let coveragePerGallon = 350; 
+
+    if (wallArea > 0 && paintCost > 0) {
+        let gallonsNeeded = Math.ceil(wallArea / coveragePerGallon);
+        let totalCost = gallonsNeeded * paintCost;
+        document.getElementById("paint-result").innerHTML = 
+            `You need <b>${gallonsNeeded} gallons</b> of paint. Total cost: <b>$${totalCost.toFixed(2)}</b>`;
+    } else {
+        document.getElementById("paint-result").innerHTML = "Please enter valid numbers.";
+    }
+}
+</script>
 </body>
 </html>
