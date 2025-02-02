@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Transcript</title>
+    <script>
+        function toggleSection(id) {
+            var section = document.getElementById(id);
+            section.style.display = section.style.display === "none" ? "block" : "none";
+        }
+    </script>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .course { margin-bottom: 10px; }
+        .toggle-button { background-color: #007bff; color: white; border: none; padding: 5px 10px; cursor: pointer; }
+        .details { display: none; padding: 10px; border: 1px solid #ccc; margin-top: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Course Transcript</h1>
+    
+    <div class="course">
+        <button class="toggle-button" onclick="toggleSection('BUSM320')">BUSM 320 - Financial Statement Analysis</button>
+        <div class="details" id="BUSM320">
+            <p><strong>Credit Hours:</strong> 3</p>
+            <p><strong>Grade:</strong> A-</p>
+        </div>
+    </div>
+
+    <div class="course">
+        <button class="toggle-button" onclick="toggleSection('BUSM353')">BUSM 353 - Income Taxes</button>
+        <div class="details" id="BUSM353">
+            <p><strong>Credit Hours:</strong> 3</p>
+            <p><strong>Grade:</strong> A-</p>
+        </div>
+    </div>
+
+    <div class="course">
+        <button class="toggle-button" onclick="toggleSection('BUSM478')">BUSM 478 - Business Law</button>
+        <div class="details" id="BUSM478">
+            <p><strong>Credit Hours:</strong> 3</p>
+            <p><strong>Grade:</strong> A-</p>
+        </div>
+    </div>
+
+    <div class="course">
+        <button class="toggle-button" onclick="toggleSection('CISC288')">CISC 288 - Advanced Python Programming</button>
+        <div class="details" id="CISC288">
+            <p><strong>Credit Hours:</strong> 3</p>
+            <p><strong>Grade:</strong> A</p>
+        </div>
+    </div>
+
+    <div class="course">
+        <button class="toggle-button" onclick="toggleSection('BUSM250')">BUSM 250 - Business Communications</button>
+        <div class="details" id="BUSM250">
+            <p><strong>Credit Hours:</strong> 3</p>
+            <p><strong>Grade:</strong> A</p>
+        </div>
+    </div>
+
+    <div class="course">
+        <button class="toggle-button" onclick="toggleSection('BUSM315')">BUSM 315 - Financial Management</button>
+        <div class="details" id="BUSM315">
+            <p><strong>Credit Hours:</strong> 3</p>
+            <p><strong>Grade:</strong> A</p>
+        </div>
+    </div>
+
+    <div class="course">
+        <button class="toggle-button" onclick="toggleSection('CISC315')">CISC 315 - Database Development/Management</button>
+        <div class="details" id="CISC315">
+            <p><strong>Credit Hours:</strong> 3</p>
+            <p><strong>Grade:</strong> A</p>
+        </div>
+    </div>
+
+    <div class="course">
+        <button class="toggle-button" onclick="toggleSection('BUSM492')">BUSM 492 - Strategic Management</button>
+        <div class="details" id="BUSM492">
+            <p><strong>Credit Hours:</strong> 3</p>
+            <p><strong>Grade:</strong> A-</p>
+        </div>
+    </div>
+
+    <div class="course">
+        <button class="toggle-button" onclick="toggleSection('CISC275')">CISC 275 - Data Structures Using C++</button>
+        <div class="details" id="CISC275">
+            <p><strong>Credit Hours:</strong> 3</p>
+            <p><strong>Grade:</strong> A</p>
+        </div>
+    </div>
+</body>
+</html>
