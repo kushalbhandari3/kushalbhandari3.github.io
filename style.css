@@ -316,3 +316,23 @@ h2 {
         margin-bottom: 10px;
     }
 }
+.coursework input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.coursework button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.coursework button:hover {
+    background-color: #2980b9;
+}
