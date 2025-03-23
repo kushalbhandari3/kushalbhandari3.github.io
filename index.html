@@ -5,20 +5,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kushal Bhandari | Portfolio</title>
 
-    <!-- Google Fonts for Clean Typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome for Icons -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-    <!-- Link to External Stylesheet -->
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Welcome Animation */
+        #welcome-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            animation: fadeOut 3s ease-in-out forwards;
+        }
+
+        #welcome-text {
+            font-size: 48px;
+            font-weight: bold;
+            color: #fff;
+            text-transform: uppercase;
+            animation: zoomIn 2s ease-in-out;
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        /* Floating Animation for Profile Picture */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .profile-pic-container {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* Fade-In Animation for Sections */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .hero, .about-me, .looking-for, #contact {
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        /* Slide-In Animation for Hero Text */
+        @keyframes slideIn {
+            0% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .hero h2 {
+            animation: slideIn 1.5s ease-in-out;
+        }
+
+        .hero p {
+            animation: slideIn 2s ease-in-out;
+        }
+    </style>
 </head>
 <body>
+    <!-- Welcome Animation -->
+    <div id="welcome-overlay">
+        <div id="welcome-text">Welcome to My Portfolio</div>
+    </div>
+
     <!-- Dark Mode Toggle -->
     <button id="dark-mode-toggle">🌙 Dark Mode</button>
 
-    <!-- Header Section with Profile -->
+    <!-- Header Section -->
     <header>
         <div class="profile">
             <div class="profile-pic-container">
@@ -27,11 +125,9 @@
             <h1 class="name">Kushal Bhandari</h1>
             <p class="subtitle">Bridging Business & Technology | Data Analytics | Product Strategy</p>
         </div>
-
         <nav>
-            <!-- Update the links to point to your actual pages -->
-            <a href="projects.html">Projects</a> <!-- Link to the Projects Page -->
-            <a href="BhandariKushalResume.pdf" target="_blank">Resume</a> <!-- Link to Resume PDF -->
+            <a href="projects.html">Projects</a>
+            <a href="BhandariKushalResume.pdf" target="_blank">Resume</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -51,7 +147,7 @@
         <p>I'm <b>Kushal Bhandari</b>, a senior at Springfield College majoring in <b>Business Management & Computer Science</b>. My expertise lies in leveraging data for business growth, strategic decision-making, and integrating technology for innovative solutions.</p>
     </section>
 
-    <!-- What I Am Looking For -->
+    <!-- What I Am Looking For Section -->
     <section class="looking-for">
         <h2>What I Am Looking For</h2>
         <p>I am actively seeking full-time opportunities in <b>Data Analytics, Business Development, Digital Marketing, Product Management, and FinTech</b>. If you're looking for a strategic thinker with a passion for innovation, let's connect!</p>
@@ -70,6 +166,15 @@
         </div>
     </section>
 
-   
+    <script>
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const body = document.body;
+
+        darkModeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            darkModeToggle.textContent = body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+        });
+    </script>
 </body>
 </html>
