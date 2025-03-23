@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects</title>
+    <title>Projects | Kushal Bhandari</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-    <script>hljs.highlightAll();</script>
     <style>
         /* General Styles */
         body {
@@ -14,80 +17,77 @@
             background-color: #f9f9f9;
             margin: 0;
             padding: 0;
+            color: #333;
         }
+
         header {
             background-color: #333;
             color: white;
             padding: 20px;
             text-align: center;
-            font-size: 24px;
         }
-        header a {
+
+        header h1 {
+            margin: 0;
+            font-size: 28px;
+        }
+
+        header nav {
+            margin-top: 10px;
+        }
+
+        header nav a {
             color: white;
             text-decoration: none;
             margin: 0 15px;
+            font-size: 16px;
             transition: color 0.3s;
         }
-        header a:hover {
+
+        header nav a:hover {
             color: #ff6347;
         }
 
         section {
-            padding: 40px 10%;
-            margin: 20px 0;
-            background-color: #fff;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 1200px;
+            background-color: white;
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
         }
 
         h2 {
+            font-size: 24px;
             cursor: pointer;
-            font-size: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             margin-bottom: 15px;
-            transition: color 0.3s;
         }
 
-        h2:hover {
-            color: #ff6347;
+        h2 i {
+            font-size: 20px;
+            transition: transform 0.3s;
+        }
+
+        .section-content {
+            display: none;
+            margin-top: 15px;
+        }
+
+        .section-content.active {
+            display: block;
         }
 
         .project {
             margin-bottom: 30px;
         }
 
-        .project iframe {
-            width: 100%;
-            border: none;
-            border-radius: 8px;
-            margin-top: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .project iframe:hover {
-            transform: scale(1.05);
-        }
-
-        .project img {
-            width: 100%;
-            border-radius: 8px;
-            margin-top: 15px;
-            transition: transform 0.3s ease;
-        }
-
-        .project img:hover {
-            transform: scale(1.05);
-        }
-
-        .flyers img {
-            width: 30%;
-            margin-right: 10px;
+        .project h3 {
+            font-size: 20px;
             margin-bottom: 10px;
-            border-radius: 8px;
-        }
-
-        .flyers img:hover {
-            transform: scale(1.05);
+            color: #333;
         }
 
         .project p {
@@ -95,10 +95,36 @@
             margin-bottom: 15px;
         }
 
-        .project h3 {
-            font-size: 22px;
-            margin-top: 10px;
-            color: #333;
+        .project iframe {
+            width: 100%;
+            height: 500px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .project img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .flyers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .flyers img {
+            width: calc(33.33% - 10px);
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .flyers img:hover {
+            transform: scale(1.05);
         }
 
         .coursework label {
@@ -123,7 +149,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s;
         }
 
         .coursework button:hover {
@@ -146,8 +172,11 @@
     </header>
 
     <!-- Data Analysis Section -->
-    <section id="data-analysis">
-        <h2 onclick="toggleSection('data-analysis-content')">Data Analysis & Business Intelligence</h2>
+    <section>
+        <h2 onclick="toggleSection('data-analysis-content')">
+            Data Analysis & Business Intelligence
+            <i class="fas fa-chevron-down"></i>
+        </h2>
         <div id="data-analysis-content" class="section-content">
             <div class="project">
                 <h3>Data Analytics: Increased Fentanyl Deaths in the US</h3>
@@ -163,15 +192,18 @@
     </section>
 
     <!-- Technical Projects Section -->
-    <section id="technical-projects">
-        <h2 onclick="toggleSection('technical-projects-content')">Software & Technical Projects</h2>
+    <section>
+        <h2 onclick="toggleSection('technical-projects-content')">
+            Software & Technical Projects
+            <i class="fas fa-chevron-down"></i>
+        </h2>
         <div id="technical-projects-content" class="section-content">
             <div class="project">
                 <h3>Portfolio Website Development</h3>
                 <p>Developed this portfolio website using HTML, CSS, and GitHub Pages to showcase projects.</p>
             </div>
             <div class="project coursework">
-                <h3><b>Paint Calculator</b></h3>
+                <h3>Paint Calculator</h3>
                 <p>This project calculates the amount of paint needed based on total wall space and paint cost per gallon.</p>
                 <label for="wall-area">Total Wall Area (sq ft):</label>
                 <input type="number" id="wall-area" placeholder="Enter wall area">
@@ -184,8 +216,11 @@
     </section>
 
     <!-- Business Strategy Section -->
-    <section id="business-strategy">
-        <h2 onclick="toggleSection('business-strategy-content')">Business & Strategy</h2>
+    <section>
+        <h2 onclick="toggleSection('business-strategy-content')">
+            Business & Strategy
+            <i class="fas fa-chevron-down"></i>
+        </h2>
         <div id="business-strategy-content" class="section-content">
             <div class="project">
                 <h3>Human Resource Management: Netflix Case Study</h3>
@@ -200,8 +235,11 @@
     </section>
 
     <!-- Leadership Projects Section -->
-    <section id="leadership-projects">
-        <h2 onclick="toggleSection('leadership-projects-content')">Leadership & Community Initiatives</h2>
+    <section>
+        <h2 onclick="toggleSection('leadership-projects-content')">
+            Leadership & Community Initiatives
+            <i class="fas fa-chevron-down"></i>
+        </h2>
         <div id="leadership-projects-content" class="section-content">
             <div class="project">
                 <h3>Break Housing Anxiety Initiative</h3>
@@ -212,24 +250,24 @@
                 <h3>Business Club Initiatives</h3>
                 <p>As the <b>President of Springfield Business Club,</b> here are some programs that I organized and designed flyers for:</p>
                 <div class="flyers">
-                    <img src="IMG_3232.jpg" class="flyer-img">
-                    <img src="Business.jpg" class="flyer-img">
-                    <img src="AI.png" class="flyer-img">
+                    <img src="IMG_3232.jpg" alt="Flyer 1">
+                    <img src="Business.jpg" alt="Flyer 2">
+                    <img src="AI.png" alt="Flyer 3">
                 </div>
-            </div>
-            <div class="project">
-                <h3>Business Communications</h3>
-                <p>Facilitated workshops for students to improve their presentation and communication skills as part of a semester-long initiative.</p>
             </div>
         </div>
     </section>
 
     <script>
+        // Toggle Section Functionality
         function toggleSection(sectionId) {
             const sectionContent = document.getElementById(sectionId);
-            sectionContent.style.display = (sectionContent.style.display === "block") ? "none" : "block";
+            const icon = sectionContent.previousElementSibling.querySelector('i');
+            sectionContent.classList.toggle('active');
+            icon.style.transform = sectionContent.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
         }
 
+        // Paint Calculator Functionality
         function calculatePaint() {
             const area = parseFloat(document.getElementById('wall-area').value);
             const costPerGallon = parseFloat(document.getElementById('paint-cost').value);
