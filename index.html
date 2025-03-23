@@ -14,83 +14,151 @@
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Curtain Opening Animation */
-        #curtain-overlay {
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* TV Transition Animation */
+        #tv-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: #333;
+            background: #000;
             z-index: 1000;
             display: flex;
             justify-content: center;
             align-items: center;
-            overflow: hidden;
+            animation: tvTurnOn 2s ease-in-out forwards;
         }
 
-        #curtain-left, #curtain-right {
-            position: absolute;
-            top: 0;
-            width: 50%;
-            height: 100%;
-            background: #00aaff;
-            animation: openCurtain 2.5s ease-in-out forwards;
+        @keyframes tvTurnOn {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                visibility: hidden;
+            }
         }
 
-        #curtain-left {
-            left: 0;
-            transform-origin: left;
-        }
-
-        #curtain-right {
-            right: 0;
-            transform-origin: right;
-        }
-
+        /* Welcome Text Animation */
         #welcome-text {
             font-size: 48px;
             font-weight: bold;
             color: #fff;
             text-transform: uppercase;
-            z-index: 1001;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #welcome-text::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, #00aaff, transparent);
+            animation: magicSwipe 2s ease-in-out forwards;
+        }
+
+        @keyframes magicSwipe {
+            0% {
+                left: -100%;
+            }
+            100% {
+                left: 100%;
+            }
+        }
+
+        /* Profile Selection Screen */
+        #profile-selection {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1a1a1a, #0a0a0a);
+        }
+
+        #profile-selection h1 {
+            font-size: 48px;
+            margin-bottom: 40px;
+            color: #00aaff;
+            text-transform: uppercase;
+        }
+
+        .profiles {
+            display: flex;
+            gap: 40px;
+        }
+
+        .profile-card {
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .profile-card:hover {
+            transform: scale(1.1);
+        }
+
+        .profile-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #00aaff;
+            object-fit: cover;
+            transition: border-color 0.3s ease;
+        }
+
+        .profile-card:hover img {
+            border-color: #ff6347;
+        }
+
+        .profile-card h2 {
+            font-size: 24px;
+            margin-top: 15px;
+            color: #fff;
+            transition: color 0.3s ease;
+        }
+
+        .profile-card:hover h2 {
+            color: #00aaff;
+        }
+
+        .profile-card p {
+            font-size: 16px;
+            color: #888;
+            margin-top: 10px;
             opacity: 0;
-            animation: fadeInText 1s ease-in-out 1s forwards;
+            transition: opacity 0.3s ease;
         }
 
-        @keyframes openCurtain {
-            0% {
-                transform: scaleX(1);
-            }
-            100% {
-                transform: scaleX(0);
-            }
+        .profile-card:hover p {
+            opacity: 1;
         }
 
-        @keyframes fadeInText {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
+        /* Sections */
+        section {
+            padding: 100px 20px;
+            text-align: center;
+            display: none;
         }
 
-        /* Floating Animation for Profile Picture */
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
+        section.active {
+            display: block;
+            animation: fadeIn 1s ease-in-out;
         }
 
-        .profile-pic-container {
-            animation: float 4s ease-in-out infinite;
-        }
-
-        /* Fade-In Animation for Sections */
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -100,77 +168,125 @@
             }
         }
 
-        .hero, .about-me, .looking-for, #contact {
-            animation: fadeIn 2s ease-in-out;
-        }
-
-        /* Slide-In Animation for Hero Text */
-        @keyframes slideIn {
-            0% {
-                transform: translateX(-100%);
-                opacity: 0;
-            }
-            100% {
-                transform: translateX(0);
-                opacity: 1;
-            }
-        }
-
+        /* Hero Section */
         .hero h2 {
-            animation: slideIn 1.5s ease-in-out;
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #00aaff;
         }
 
         .hero p {
-            animation: slideIn 2s ease-in-out;
+            font-size: 18px;
+            color: #ccc;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 24px;
+            margin-top: 30px;
+            background-color: #00aaff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #0077cc;
+            transform: translateY(-5px);
+        }
+
+        /* About Me Section */
+        .about-me p {
+            font-size: 18px;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* What I Am Looking For Section */
+        .looking-for p {
+            font-size: 18px;
+            color: #ccc;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Contact Section */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .contact-link {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: #00aaff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 16px;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background-color: #0077cc;
+            transform: translateY(-5px);
         }
     </style>
 </head>
 <body>
-    <!-- Curtain Opening Animation -->
-    <div id="curtain-overlay">
-        <div id="curtain-left"></div>
-        <div id="curtain-right"></div>
-        <div id="welcome-text">Welcome to My Portfolio</div>
+    <!-- TV Transition -->
+    <div id="tv-overlay"></div>
+
+    <!-- Welcome Text Animation -->
+    <div id="profile-selection">
+        <h1 id="welcome-text">Welcome to My Portfolio</h1>
+        <div class="profiles">
+            <div class="profile-card" onclick="showSection('hero')">
+                <img src="kush.jpg" alt="Kushal Bhandari">
+                <h2>Home</h2>
+                <p>Explore my portfolio and learn more about me.</p>
+            </div>
+            <div class="profile-card" onclick="showSection('projects')">
+                <img src="projects-icon.jpg" alt="Projects">
+                <h2>Projects</h2>
+                <p>Check out my latest projects and case studies.</p>
+            </div>
+            <div class="profile-card" onclick="showSection('resume')">
+                <img src="resume-icon.jpg" alt="Resume">
+                <h2>Resume</h2>
+                <p>Download my resume and see my experience.</p>
+            </div>
+            <div class="profile-card" onclick="showSection('contact')">
+                <img src="contact-icon.jpg" alt="Contact">
+                <h2>Contact</h2>
+                <p>Get in touch with me for opportunities.</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Dark Mode Toggle -->
-    <button id="dark-mode-toggle">🌙 Dark Mode</button>
-
-    <!-- Header Section -->
-    <header>
-        <div class="profile">
-            <div class="profile-pic-container">
-                <img src="kush.jpg" alt="Kushal Bhandari" class="profile-pic">
-            </div>
-            <h1 class="name">Kushal Bhandari</h1>
-            <p class="subtitle">Bridging Business & Technology | Data Analytics | Product Strategy</p>
-        </div>
-        <nav>
-            <a href="projects.html">Projects</a>
-            <a href="BhandariKushalResume.pdf" target="_blank">Resume</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
-
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Transforming Data into Strategic Insights</h2>
-            <p>Combining business acumen and technical expertise to drive innovation in Data Analytics, FinTech, and Product Management.</p>
-            <a href="#contact" class="cta-button">Get in Touch</a>
-        </div>
+    <section id="hero" class="hero">
+        <h2>Transforming Data into Strategic Insights</h2>
+        <p>Combining business acumen and technical expertise to drive innovation in Data Analytics, FinTech, and Product Management.</p>
+        <a href="#contact" class="cta-button">Get in Touch</a>
     </section>
 
-    <!-- About Me Section -->
-    <section class="about-me" id="about">
-        <h2>About Me</h2>
-        <p>I'm <b>Kushal Bhandari</b>, a senior at Springfield College majoring in <b>Business Management & Computer Science</b>. My expertise lies in leveraging data for business growth, strategic decision-making, and integrating technology for innovative solutions.</p>
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>Here are some of my latest projects. Click to learn more!</p>
+        <!-- Add your projects here -->
     </section>
 
-    <!-- What I Am Looking For Section -->
-    <section class="looking-for">
-        <h2>What I Am Looking For</h2>
-        <p>I am actively seeking full-time opportunities in <b>Data Analytics, Business Development, Digital Marketing, Product Management, and FinTech</b>. If you're looking for a strategic thinker with a passion for innovation, let's connect!</p>
+    <!-- Resume Section -->
+    <section id="resume">
+        <h2>Resume</h2>
+        <p>Download my resume to see my experience and skills.</p>
+        <a href="BhandariKushalResume.pdf" target="_blank" class="cta-button">Download Resume</a>
     </section>
 
     <!-- Contact Section -->
@@ -183,24 +299,26 @@
             <a href="mailto:bkushal14@gmail.com" class="contact-link">
                 <i class="fas fa-envelope"></i> Gmail
             </a>
+            <a href="tel:+1432346033" class="contact-link">
+                <i class="fas fa-phone"></i> Call Me
+            </a>
         </div>
     </section>
 
     <script>
-        // Dark Mode Toggle
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        const body = document.body;
+        // Show Selected Section
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.remove('active');
+            });
 
-        darkModeToggle.addEventListener('click', () => {
-            body.classList.toggle('dark-mode');
-            darkModeToggle.textContent = body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
-        });
+            // Show the selected section
+            document.getElementById(sectionId).classList.add('active');
 
-        // Remove Curtain After Animation
-        const curtainOverlay = document.getElementById('curtain-overlay');
-        setTimeout(() => {
-            curtainOverlay.style.display = 'none';
-        }, 3000); // Match the duration of the curtain animation
+            // Hide the profile selection screen
+            document.getElementById('profile-selection').style.display = 'none';
+        }
     </script>
 </body>
 </html>
