@@ -1,338 +1,151 @@
-/* General Styling */
+/* General Body Styling */
 body {
     font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f4f4f4;
     color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Header Section */
-header {
-    background: linear-gradient(135deg, #2c3e50, #34495e);
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #1e1e1e;
     color: #fff;
-    padding: 40px 10%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
-/* Profile Section */
-.profile {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Header Styling */
+header {
     text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    transition: background 0.3s ease;
+}
+
+body.dark-mode header {
+    background-color: #444;
 }
 
 /* Profile Picture Styling */
-.profile-pic-container {
-    width: 170px; /* Slightly larger */
-    height: 170px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #3498db, #8e44ad);
-    padding: 5px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
 .profile-pic {
-    width: 100%;
-    height: 100%;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
-    object-fit: cover; /* Maintains aspect ratio */
-    border: 3px solid #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 4px solid #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
 }
 
 .profile-pic:hover {
-    transform: scale(1.08);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
 }
 
-/* Name Styling */
-.name {
-    font-size: 2.5rem;
-    margin: 15px 0 5px;
-    color: #b9b9b9; /* Warm, sophisticated gold */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-/* Subheading */
-header p {
-    font-size: 1.2rem;
-    margin: 5px 0;
-    color: #ecf0f1;
-}
-
-/* Navigation */
-nav {
-    margin-top: 20px;
-}
-
+/* Navigation Styling */
 nav a {
+    margin: 0 10px;
     color: #fff;
-    margin: 0 15px;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
     text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
 }
 
 nav a:hover {
-    color: #f39c12;
+    color: #00aaff;
 }
 
-/* Hero Section */
+/* Hero Section Styling */
 .hero {
     text-align: center;
-    padding: 50px 10%;
-    background: #ecf0f1;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #00aaff, #004466);
+    color: #fff;
+    transition: background 0.3s ease;
 }
 
-.hero h2 {
-    font-size: 2rem;
-    color: #333;
-}
-
-.hero p {
-    font-size: 1.1rem;
-    color: #555;
+body.dark-mode .hero {
+    background: linear-gradient(135deg, #005f7a, #002233);
 }
 
 .cta-button {
     display: inline-block;
-    margin-top: 20px;
     padding: 10px 20px;
-    background: #f39c12;
+    margin-top: 10px;
+    background-color: #00aaff;
     color: #fff;
     border-radius: 25px;
     text-decoration: none;
-    transition: background 0.3s ease;
+    transition: transform 0.3s ease;
 }
 
 .cta-button:hover {
-    background: #e67e22;
+    transform: scale(1.1);
+    background-color: #0077cc;
 }
 
-/* Contact Section */
-#contact {
-    text-align: center;
-    padding: 50px 10%;
-    background: #2c3e50;
-    color: white;
-}
-
-.contact-links a {
-    color: #fff;
-    font-size: 1.2rem;
-    margin: 0 15px;
-    text-decoration: none;
-}
-
-.contact-links a:hover {
-    color: #f39c12;
-}
-/* Hero Section */
-.hero {
-    background: linear-gradient(135deg, #3498db, #2980b9);
-    color: #fff;
-    padding: 100px 10%;
-    text-align: center;
-}
-
-.hero h2 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
-}
-
-.cta-button {
-    background: #fff;
-    color: #3498db;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 1.1rem;
-    transition: background 0.3s ease, color 0.3s ease;
-}
-
-.cta-button:hover {
-    background: #3498db;
-    color: #fff;
-}
-
-/* About Me Section */
-.about-me {
-    padding: 80px 10%;
-    background: #fff;
-}
-
-.about-me h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.about-me p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* What I Am Looking For Section */
-.looking-for {
-    padding: 80px 10%;
-    background: #f4f4f9;
-}
-
-.looking-for h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.looking-for p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-/* Contact Section */
-#contact {
-    padding: 80px 10%;
-    background: #fff;
-    text-align: center;
-}
-
-#contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-}
-
-.contact-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.contact-link {
-    display: flex;
-    align-items: center;
-    background: #3498db;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-
-.contact-link:hover {
-    background: #2980b9;
-}
-
-.contact-link i {
-    margin-right: 10px;
-}
-
-/* Sections */
-section {
-    background: white;
-    margin: 30px auto;
+/* About Me Section Styling */
+.about-me, .looking-for, #contact {
     padding: 20px;
-    max-width: 900px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 h2 {
-    color: #0a1931;
-    font-size: 22px;
-    margin-bottom: 15px;
+    color: #00aaff;
+    transition: color 0.3s ease;
 }
 
-/* Project Styling */
-.project {
-    background-color: #ecf0f1;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+body.dark-mode h2 {
+    color: #00ddff;
 }
 
-.project iframe {
-    width: 100%;
-    height: 400px;
-    border: none;
+/* Contact Links Styling */
+.contact-link {
+    display: inline-block;
+    margin: 10px;
+    color: #00aaff;
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.project img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 8px;
-    display: block;
-    margin: 10px auto;
+.contact-link:hover {
+    transform: translateY(-5px);
+    color: #0077cc;
 }
 
-/* Flyers */
-.flyers {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    flex-wrap: wrap;
-}
-
-.flyer-img {
-    width: 30%;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.flyer-img:hover {
-    transform: scale(1.05);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .profile-pic {
-        width: 100px;
-        height: 100px;
-    }
-
-    .contact-links {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .flyers {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .flyer-img {
-        width: 80%;
-        margin-bottom: 10px;
-    }
-}
-.coursework input {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.coursework button {
-    background-color: #3498db;
-    color: white;
-    padding: 10px 15px;
+/* Dark Mode Toggle Button Styling */
+#dark-mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
     border: none;
     cursor: pointer;
-    margin-top: 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
 }
 
-.coursework button:hover {
-    background-color: #2980b9;
+#dark-mode-toggle:hover {
+    background-color: #555;
+}
+
+body.dark-mode #dark-mode-toggle {
+    background-color: #444;
+}
+
+/* Smooth Fade-in Animations */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
