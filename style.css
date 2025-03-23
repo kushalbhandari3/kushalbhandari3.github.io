@@ -1,7 +1,7 @@
 /* General Body Styling */
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f0f0f0;
     color: #333;
     margin: 0;
     padding: 0;
@@ -11,30 +11,32 @@ body {
 
 /* Dark Mode Styles */
 body.dark-mode {
-    background-color: #1e1e1e;
+    background-color: #2b2b2b;
     color: #fff;
 }
 
 /* Header Styling */
 header {
     text-align: center;
-    padding: 20px;
+    padding: 40px 20px;
     background-color: #333;
     color: #fff;
     transition: background 0.3s ease;
 }
 
-body.dark-mode header {
-    background-color: #444;
-}
-
-/* Profile Picture Styling */
-.profile-pic {
+header .profile-pic-container {
+    display: inline-block;
+    border-radius: 50%;
+    overflow: hidden;
     width: 150px;
     height: 150px;
-    border-radius: 50%;
-    border: 4px solid #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     transition: transform 0.3s ease;
 }
 
@@ -42,12 +44,24 @@ body.dark-mode header {
     transform: scale(1.1);
 }
 
+.name {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    margin-top: 10px;
+}
+
 /* Navigation Styling */
 nav a {
-    margin: 0 10px;
+    margin: 0 15px;
     color: #fff;
     text-decoration: none;
     font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.1rem;
     transition: color 0.3s ease;
 }
 
@@ -55,27 +69,34 @@ nav a:hover {
     color: #00aaff;
 }
 
-/* Hero Section Styling */
+/* Hero Section */
 .hero {
     text-align: center;
-    padding: 50px 20px;
+    padding: 100px 20px;
     background: linear-gradient(135deg, #00aaff, #004466);
     color: #fff;
     transition: background 0.3s ease;
 }
 
-body.dark-mode .hero {
-    background: linear-gradient(135deg, #005f7a, #002233);
+.hero h2 {
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 20px;
 }
 
 .cta-button {
     display: inline-block;
-    padding: 10px 20px;
-    margin-top: 10px;
+    padding: 15px 30px;
+    margin-top: 30px;
     background-color: #00aaff;
     color: #fff;
-    border-radius: 25px;
+    border-radius: 50px;
     text-decoration: none;
+    font-size: 1.2rem;
     transition: transform 0.3s ease;
 }
 
@@ -84,28 +105,69 @@ body.dark-mode .hero {
     background-color: #0077cc;
 }
 
-/* About Me Section Styling */
-.about-me, .looking-for, #contact {
-    padding: 20px;
+/* Section Styles */
+section {
+    padding: 60px 20px;
     text-align: center;
 }
 
 h2 {
     color: #00aaff;
-    transition: color 0.3s ease;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
-body.dark-mode h2 {
-    color: #00ddff;
+p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Projects Section */
+.projects {
+    background-color: #f0f0f0;
+}
+
+.project-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #fff;
+    padding: 30px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 1rem;
+    margin-bottom: 20px;
 }
 
 /* Contact Links Styling */
 .contact-link {
     display: inline-block;
-    margin: 10px;
+    margin: 15px;
     color: #00aaff;
     text-decoration: none;
-    font-size: 1.2em;
+    font-size: 1.3rem;
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
@@ -117,14 +179,15 @@ body.dark-mode h2 {
 /* Dark Mode Toggle Button Styling */
 #dark-mode-toggle {
     position: fixed;
-    top: 10px;
-    right: 10px;
-    padding: 5px 10px;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
     background-color: #333;
     color: #fff;
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    font-size: 1rem;
     transition: background 0.3s ease;
 }
 
@@ -134,18 +197,4 @@ body.dark-mode h2 {
 
 body.dark-mode #dark-mode-toggle {
     background-color: #444;
-}
-
-/* Smooth Fade-in Animations */
-section {
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeIn 0.8s ease-in forwards;
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
