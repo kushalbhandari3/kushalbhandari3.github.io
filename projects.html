@@ -39,16 +39,6 @@
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             margin-bottom: 20px;
-            opacity: 0;
-            transform: translateY(50px);
-            animation: fadeIn 1s forwards;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         h2 {
@@ -228,36 +218,31 @@
                 </div>
             </div>
             <div class="project">
-                <h3>Resident Assistant Initiatives</h3>
-                <p>As a <b>Resident Assistant,</b> here are some samples of my door decoration, floor programs, and bulletin boards:</p>
-                <div class="flyers">
-                    <img src="movienight.png" class="flyer-img">
-                    <img src="doordec.png" class="flyer-img">
-                    <img src="IMG_3349.jpg" class="flyer-img">
-                </div>
+                <h3>Business Communications</h3>
+                <p>Facilitated workshops for students to improve their presentation and communication skills as part of a semester-long initiative.</p>
             </div>
         </div>
     </section>
 
     <script>
         function toggleSection(sectionId) {
-            var section = document.getElementById(sectionId);
-            section.style.display = section.style.display === 'none' ? 'block' : 'none';
+            const sectionContent = document.getElementById(sectionId);
+            sectionContent.style.display = (sectionContent.style.display === "block") ? "none" : "block";
         }
 
         function calculatePaint() {
-            let wallArea = document.getElementById("wall-area").value;
-            let paintCost = document.getElementById("paint-cost").value;
-            let coveragePerGallon = 350;
+            const area = parseFloat(document.getElementById('wall-area').value);
+            const costPerGallon = parseFloat(document.getElementById('paint-cost').value);
 
-            if (wallArea > 0 && paintCost > 0) {
-                let gallonsNeeded = Math.ceil(wallArea / coveragePerGallon);
-                let totalCost = gallonsNeeded * paintCost;
-                document.getElementById("paint-result").innerHTML = 
-                    `You need <b>${gallonsNeeded} gallons</b> of paint. Total cost: <b>$${totalCost.toFixed(2)}</b>`;
-            } else {
-                document.getElementById("paint-result").innerHTML = "Please enter valid numbers.";
+            if (!area || !costPerGallon) {
+                document.getElementById('paint-result').textContent = 'Please enter valid values!';
+                return;
             }
+
+            const gallons = area / 350; // Assume 350 sqft per gallon
+            const totalCost = gallons * costPerGallon;
+
+            document.getElementById('paint-result').textContent = `You need ${gallons.toFixed(2)} gallons of paint. Total cost: $${totalCost.toFixed(2)}.`;
         }
     </script>
 </body>
