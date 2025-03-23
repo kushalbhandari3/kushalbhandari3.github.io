@@ -5,128 +5,245 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-        function toggleSection(sectionId) {
-            var section = document.getElementById(sectionId);
-            section.style.display = section.style.display === 'none' ? 'block' : 'none';
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
         }
-    </script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
-   <script>hljs.highlightAll();</script>
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+        }
+        header a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        header a:hover {
+            color: #ff6347;
+        }
+
+        section {
+            padding: 40px 10%;
+            margin: 20px 0;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            cursor: pointer;
+            font-size: 28px;
+            margin-bottom: 15px;
+            transition: color 0.3s;
+        }
+
+        h2:hover {
+            color: #ff6347;
+        }
+
+        .project {
+            margin-bottom: 30px;
+        }
+
+        .project iframe {
+            width: 100%;
+            border: none;
+            border-radius: 8px;
+            margin-top: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .project iframe:hover {
+            transform: scale(1.05);
+        }
+
+        .project img {
+            width: 100%;
+            border-radius: 8px;
+            margin-top: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .project img:hover {
+            transform: scale(1.05);
+        }
+
+        .flyers img {
+            width: 30%;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .flyers img:hover {
+            transform: scale(1.05);
+        }
+
+        .project p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .project h3 {
+            font-size: 22px;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .coursework label {
+            font-size: 16px;
+            margin-top: 15px;
+            display: block;
+        }
+
+        .coursework input {
+            margin-top: 8px;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .coursework button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .coursework button:hover {
+            background-color: #ff6347;
+        }
+
+        #paint-result {
+            margin-top: 15px;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>My Projects</h1>
         <nav>
             <a href="index.html">Home</a> | 
-            <a href="resume.pdf">Resume</a>
+            <a href="resume.pdf" target="_blank">Resume</a>
         </nav>
     </header>
 
-    <section>
-        <h2 onclick="toggleSection('data-analysis')" style="cursor: pointer;">Data Analysis & Business Intelligence</h2>
-        <div id="data-analysis" style="display: none;">
+    <!-- Data Analysis Section -->
+    <section id="data-analysis">
+        <h2 onclick="toggleSection('data-analysis-content')">Data Analysis & Business Intelligence</h2>
+        <div id="data-analysis-content" class="section-content">
             <div class="project">
                 <h3>Data Analytics: Increased Fentanyl Deaths in the US</h3>
                 <p>Finding a relationship between Homelessness Rate and Number of Insured People with Fentanyl-Overdose Deaths using predictive and descriptive analytics.</p>
-                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSyV2kV00z3cE86YQ5W9Gi6r56a-Hf8zzJojexLcqghSJkS9gdLYqmOGY-OfcVGkolOvll_DG9kxiwh/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="400px"></iframe>
+                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vSyV2kV00z3cE86YQ5W9Gi6r56a-Hf8zzJojexLcqghSJkS9gdLYqmOGY-OfcVGkolOvll_DG9kxiwh/embed?start=false&loop=false&delayms=3000"></iframe>
             </div>
             <div class="project">
                 <h3>Predicting Credit Risk with Machine Learning</h3>
                 <p>Using machine learning models like Decision Tree Classifier, Logistic Regression, and KNN to predict credit risk for financial institutions.</p>
-                <iframe src="Predicting_Credit_Card.pdf" width="100%" height="400px"></iframe>
+                <iframe src="Predicting_Credit_Card.pdf"></iframe>
             </div>
         </div>
     </section>
 
-    <section>
-        <h2 onclick="toggleSection('technical-projects')" style="cursor: pointer;">Software & Technical Projects</h2>
-        <div id="technical-projects" style="display: none;">
+    <!-- Technical Projects Section -->
+    <section id="technical-projects">
+        <h2 onclick="toggleSection('technical-projects-content')">Software & Technical Projects</h2>
+        <div id="technical-projects-content" class="section-content">
             <div class="project">
                 <h3>Portfolio Website Development</h3>
                 <p>Developed this portfolio website using HTML, CSS, and GitHub Pages to showcase projects.</p>
             </div>
-            <!-- Paint Calculator Project -->
-            <div class="coursework">
+            <div class="project coursework">
                 <h3><b>Paint Calculator</b></h3>
                 <p>This project calculates the amount of paint needed based on total wall space and paint cost per gallon.</p>
-            
-                <!-- User Input Form -->
                 <label for="wall-area">Total Wall Area (sq ft):</label>
                 <input type="number" id="wall-area" placeholder="Enter wall area">
-            
                 <label for="paint-cost">Cost per Gallon ($):</label>
                 <input type="number" id="paint-cost" placeholder="Enter cost per gallon">
-            
                 <button onclick="calculatePaint()">Calculate</button>
-            
-                <!-- Result Display -->
                 <p id="paint-result"></p>
             </div>
         </div>
     </section>
 
-    <section>
-        <h2 onclick="toggleSection('business-strategy')" style="cursor: pointer;">Business & Strategy</h2>
-        <div id="business-strategy" style="display: none;">
+    <!-- Business Strategy Section -->
+    <section id="business-strategy">
+        <h2 onclick="toggleSection('business-strategy-content')">Business & Strategy</h2>
+        <div id="business-strategy-content" class="section-content">
             <div class="project">
                 <h3>Human Resource Management: Netflix Case Study</h3>
-                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQW3Gl_OoItZXaA2vEh46jCja8DdpYyzHAEvEGJnLDnEYbFIS0kElMC2P7ac1IiurcNAA40OqenqEwD/embed?start=false&loop=false&delayms=3000" frameborder="0" width="100%" height="400px"></iframe>
+                <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vQW3Gl_OoItZXaA2vEh46jCja8DdpYyzHAEvEGJnLDnEYbFIS0kElMC2P7ac1IiurcNAA40OqenqEwD/embed?start=false&loop=false&delayms=3000"></iframe>
             </div>
             <div class="project">
                 <h3>Business Communication: Value Proposition Report</h3>
                 <p>Developed a business value proposition for a local business in Springfield.</p>
-                <iframe src="https://docs.google.com/document/d/e/2PACX-1vSAtWMhBKM_DHyuxhklbJZOPxXDKCMFneWhp0aGwzb0bp0k8NNmbueG62Xg4uah6wFRMKbqyJOX2ylJ/pub?embedded=true" width="100%" height="800px"></iframe>
+                <iframe src="https://docs.google.com/document/d/e/2PACX-1vSAtWMhBKM_DHyuxhklbJZOPxXDKCMFneWhp0aGwzb0bp0k8NNmbueG62Xg4uah6wFRMKbqyJOX2ylJ/pub?embedded=true"></iframe>
             </div>
         </div>
     </section>
 
-    <section>
-        <h2 onclick="toggleSection('leadership-projects')" style="cursor: pointer;">Leadership & Community Initiatives</h2>
-        <div id="leadership-projects" style="display: none;">
+    <!-- Leadership Projects Section -->
+    <section id="leadership-projects">
+        <h2 onclick="toggleSection('leadership-projects-content')">Leadership & Community Initiatives</h2>
+        <div id="leadership-projects-content" class="section-content">
             <div class="project">
                 <h3>Break Housing Anxiety Initiative</h3>
                 <p>As the <b>Student Trustee</b>, I initiated a project to dismantle <b>Break Housing Anxiety</b> amongst the students on campus.</p>
-                <img src=" Funds collected from this event will go towards Break Housing Waiver ..png" alt="Break Housing Waiver Project" class="project-image">
+                <img src="Funds_collected_from_this_event_will_go_towards_Break_Housing_Waiver.png" alt="Break Housing Waiver Project">
             </div>
             <div class="project">
                 <h3>Business Club Initiatives</h3>
-                <p>As the <b>President of Springfield Business Club,</b>here are some programs that I organized and designed flyers for:</p>
+                <p>As the <b>President of Springfield Business Club,</b> here are some programs that I organized and designed flyers for:</p>
                 <div class="flyers">
                     <img src="IMG_3232.jpg" class="flyer-img">
                     <img src="Business.jpg" class="flyer-img">
                     <img src="AI.png" class="flyer-img">
                 </div>
-            </div>    
+            </div>
             <div class="project">
-                <h3>Resident Assistant Initiatives</h3>
-                <p>As a <b>Resident Assistant,</b> here are some samples of my door decoration, floor programs, and bulletin boards:</p>
-                <div class="flyers">
-                    <img src="movienight.png" class="flyer-img">
-                    <img src="doordec.png" class="flyer-img">
-                    <img src="IMG_3349.jpg" class="flyer-img">
-                </div>
-            </div>   
-         </div>
+                <h3>Business Communications</h3>
+                <p>Facilitated workshops for students to improve their presentation and communication skills as part of a semester-long initiative.</p>
+            </div>
+        </div>
     </section>
-<script>
-function calculatePaint() {
-    let wallArea = document.getElementById("wall-area").value;
-    let paintCost = document.getElementById("paint-cost").value;
-    
-    // Paint Coverage (Assumption: 1 Gallon Covers 350 sq ft)
-    let coveragePerGallon = 350; 
 
-    if (wallArea > 0 && paintCost > 0) {
-        let gallonsNeeded = Math.ceil(wallArea / coveragePerGallon);
-        let totalCost = gallonsNeeded * paintCost;
-        document.getElementById("paint-result").innerHTML = 
-            You need <b>${gallonsNeeded} gallons</b> of paint. Total cost: <b>$${totalCost.toFixed(2)}</b>;
-    } else {
-        document.getElementById("paint-result").innerHTML = "Please enter valid numbers.";
-    }
-}
-</script>
+    <script>
+        function toggleSection(sectionId) {
+            const sectionContent = document.getElementById(sectionId);
+            sectionContent.style.display = (sectionContent.style.display === "block") ? "none" : "block";
+        }
+
+        function calculatePaint() {
+            const area = parseFloat(document.getElementById('wall-area').value);
+            const costPerGallon = parseFloat(document.getElementById('paint-cost').value);
+
+            if (!area || !costPerGallon) {
+                document.getElementById('paint-result').textContent = 'Please enter valid values!';
+                return;
+            }
+
+            const gallons = area / 350; // Assume 350 sqft per gallon
+            const totalCost = gallons * costPerGallon;
+
+            document.getElementById('paint-result').textContent = `You need ${gallons.toFixed(2)} gallons of paint. Total cost: $${totalCost.toFixed(2)}.`;
+        }
+    </script>
 </body>
 </html>
