@@ -4,22 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kushal Bhandari | Portfolio</title>
-    
+
     <!-- Google Fonts for Clean Typography -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
-    
+
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
     <!-- Link to External Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <!-- Dark Mode Toggle -->
     <button id="dark-mode-toggle">🌙 Dark Mode</button>
-    <!-- Link the new script file -->
-    <script src="script.js"></script>
 
     <!-- Header Section with Profile -->
     <header>
@@ -28,12 +25,12 @@
                 <img src="kush.jpg" alt="Kushal Bhandari" class="profile-pic">
             </div>
             <h1 class="name">Kushal Bhandari</h1>
-            <p>Bridging Business & Technology | Data Analytics | Product Strategy</p>
+            <p class="subtitle">Bridging Business & Technology | Data Analytics | Product Strategy</p>
         </div>
-        
+
         <nav>
-            <a href="projects.html">Projects</a>
-            <a href="Bhandari_Kushal.pdf">Resume</a>  
+            <a href="#projects">Projects</a>
+            <a href="Bhandari_Kushal.pdf" target="_blank">Resume</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -42,27 +39,34 @@
     <section class="hero">
         <div class="hero-content">
             <h2>Transforming Data into Strategic Insights</h2>
-            <p>With a unique blend of business acumen and technical expertise, I leverage analytics, fintech, and product management strategies to drive innovation.</p>
+            <p>Combining business acumen and technical expertise to drive innovation in Data Analytics, FinTech, and Product Management.</p>
             <a href="#contact" class="cta-button">Get in Touch</a>
         </div>
     </section>
 
     <!-- About Me Section -->
-    <section class="about-me">
+    <section class="about-me" id="about">
         <h2>About Me</h2>
-        <p>I'm <b>Kushal Bhandari</b>, a senior at Springfield College majoring in <b>Business Management & Computer Science</b>. My expertise lies in extracting data-driven insights to fuel business growth, optimizing decision-making through analytics, and integrating technology into financial and strategic solutions.</p>
-        
-        <p>Whether leading as <b>Student Trustee</b> or driving impact as <b>President of the Business Club</b>, I thrive in roles that require strategic thinking, collaboration, and innovation. Proficient in <b>Python, MySQL, C++, and Excel</b>, I specialize in transforming raw data into actionable intelligence.</p>
-        
-        <p>Passionate about <b>Data Analysis, FinTech, and Product Strategy</b>, I aim to drive measurable results through analytical rigor and business foresight.</p>
+        <p>I'm <b>Kushal Bhandari</b>, a senior at Springfield College majoring in <b>Business Management & Computer Science</b>. My expertise lies in leveraging data for business growth, strategic decision-making, and integrating technology for innovative solutions.</p>
     </section>
 
     <!-- What I Am Looking For -->
     <section class="looking-for">
         <h2>What I Am Looking For</h2>
-        <p>
-            I am seeking full-time opportunities in <b>Data Analytics, Business Development, Digital Marketing, Product Management, and FinTech</b>. If your organization is looking for a problem solver with a strong analytical mindset and a passion for technology-driven solutions, let's connect!
-        </p>
+        <p>I am actively seeking full-time opportunities in <b>Data Analytics, Business Development, Digital Marketing, Product Management, and FinTech</b>. If you're looking for a strategic thinker with a passion for innovation, let's connect!</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project-cards">
+            <!-- Add your project cards here -->
+            <div class="project-card">
+                <h3>Project Name</h3>
+                <p>Description of the project and its impact. Maybe include some technologies used.</p>
+                <a href="#" class="cta-button">View Project</a>
+            </div>
+        </div>
     </section>
 
     <!-- Contact Section -->
@@ -70,17 +74,14 @@
         <h2>Contact Me</h2>
         <div class="contact-links">
             <a href="https://www.linkedin.com/in/kushalbhandarii/" target="_blank" class="contact-link">
-                <i class="fab fa-linkedin"></i>
-                LinkedIn
+                <i class="fab fa-linkedin"></i> LinkedIn
             </a>
             <a href="mailto:bkushal14@gmail.com" class="contact-link">
-                <i class="fas fa-envelope"></i>
-                Gmail
+                <i class="fas fa-envelope"></i> Gmail
             </a>
         </div>
     </section>
 
-    <!-- Link to Script for Enhancements -->
     <script src="script.js"></script>
 </body>
 </html>
