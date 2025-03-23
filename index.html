@@ -23,16 +23,36 @@
             padding: 0;
             overflow: hidden;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
         }
 
+        /* Welcome Text */
+        #welcome-text {
+            font-size: 48px;
+            font-weight: bold;
+            color: #00aaff;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
         /* Card Shuffler Container */
         .shuffler-container {
             position: relative;
-            width: 300px;
-            height: 300px;
+            width: 400px;
+            height: 400px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -40,8 +60,8 @@
 
         /* Center Photo */
         .center-photo {
-            width: 100px;
-            height: 100px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             border: 3px solid #00aaff;
             object-fit: cover;
@@ -62,19 +82,20 @@
         /* Cards */
         .card {
             position: absolute;
-            width: 80px;
-            height: 80px;
+            width: 120px;
+            height: 120px;
             background: #00aaff;
             border-radius: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
             color: #fff;
-            font-size: 14px;
+            font-size: 16px;
             text-align: center;
             cursor: pointer;
             transition: transform 0.5s ease, box-shadow 0.3s ease;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            animation: shuffle 3s ease-in-out forwards;
         }
 
         .card:hover {
@@ -84,88 +105,99 @@
 
         /* Card Positions */
         .card:nth-child(1) {
-            transform: translate(-100px, -100px);
-            animation: shuffle1 4s infinite;
+            animation-name: shuffle1;
         }
 
         .card:nth-child(2) {
-            transform: translate(100px, -100px);
-            animation: shuffle2 4s infinite;
+            animation-name: shuffle2;
         }
 
         .card:nth-child(3) {
-            transform: translate(100px, 100px);
-            animation: shuffle3 4s infinite;
+            animation-name: shuffle3;
         }
 
         .card:nth-child(4) {
-            transform: translate(-100px, 100px);
-            animation: shuffle4 4s infinite;
+            animation-name: shuffle4;
         }
 
         /* Shuffling Animations */
         @keyframes shuffle1 {
-            0%, 100% {
-                transform: translate(-100px, -100px);
+            0% {
+                transform: translate(0, 0);
             }
             25% {
-                transform: translate(100px, -100px);
+                transform: translate(150px, -150px);
             }
             50% {
-                transform: translate(100px, 100px);
+                transform: translate(-150px, 150px);
             }
             75% {
-                transform: translate(-100px, 100px);
+                transform: translate(150px, 150px);
+            }
+            100% {
+                transform: translate(-150px, -150px);
             }
         }
 
         @keyframes shuffle2 {
-            0%, 100% {
-                transform: translate(100px, -100px);
+            0% {
+                transform: translate(0, 0);
             }
             25% {
-                transform: translate(100px, 100px);
+                transform: translate(-150px, 150px);
             }
             50% {
-                transform: translate(-100px, 100px);
+                transform: translate(150px, 150px);
             }
             75% {
-                transform: translate(-100px, -100px);
+                transform: translate(-150px, -150px);
+            }
+            100% {
+                transform: translate(150px, -150px);
             }
         }
 
         @keyframes shuffle3 {
-            0%, 100% {
-                transform: translate(100px, 100px);
+            0% {
+                transform: translate(0, 0);
             }
             25% {
-                transform: translate(-100px, 100px);
+                transform: translate(150px, 150px);
             }
             50% {
-                transform: translate(-100px, -100px);
+                transform: translate(-150px, -150px);
             }
             75% {
-                transform: translate(100px, -100px);
+                transform: translate(150px, -150px);
+            }
+            100% {
+                transform: translate(-150px, 150px);
             }
         }
 
         @keyframes shuffle4 {
-            0%, 100% {
-                transform: translate(-100px, 100px);
+            0% {
+                transform: translate(0, 0);
             }
             25% {
-                transform: translate(-100px, -100px);
+                transform: translate(-150px, -150px);
             }
             50% {
-                transform: translate(100px, -100px);
+                transform: translate(150px, -150px);
             }
             75% {
-                transform: translate(100px, 100px);
+                transform: translate(-150px, 150px);
+            }
+            100% {
+                transform: translate(150px, 150px);
             }
         }
     </style>
 </head>
 <body>
+    <!-- Welcome Text -->
+    <div id="welcome-text">Welcome to My Portfolio</div>
+
     <!-- Card Shuffler Container -->
     <div class="shuffler-container">
         <!-- Center Photo -->
