@@ -14,19 +14,38 @@
     <!-- Custom Styles -->
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Welcome Animation */
-        #welcome-overlay {
+        /* Curtain Opening Animation */
+        #curtain-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.9);
+            background: #333;
+            z-index: 1000;
             display: flex;
             justify-content: center;
             align-items: center;
-            z-index: 1000;
-            animation: fadeOut 3s ease-in-out forwards;
+            overflow: hidden;
+        }
+
+        #curtain-left, #curtain-right {
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: #00aaff;
+            animation: openCurtain 2.5s ease-in-out forwards;
+        }
+
+        #curtain-left {
+            left: 0;
+            transform-origin: left;
+        }
+
+        #curtain-right {
+            right: 0;
+            transform-origin: right;
         }
 
         #welcome-text {
@@ -34,27 +53,26 @@
             font-weight: bold;
             color: #fff;
             text-transform: uppercase;
-            animation: zoomIn 2s ease-in-out;
+            z-index: 1001;
+            opacity: 0;
+            animation: fadeInText 1s ease-in-out 1s forwards;
         }
 
-        @keyframes zoomIn {
+        @keyframes openCurtain {
             0% {
-                transform: scale(0.5);
+                transform: scaleX(1);
+            }
+            100% {
+                transform: scaleX(0);
+            }
+        }
+
+        @keyframes fadeInText {
+            0% {
                 opacity: 0;
             }
             100% {
-                transform: scale(1);
                 opacity: 1;
-            }
-        }
-
-        @keyframes fadeOut {
-            0% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                visibility: hidden;
             }
         }
 
@@ -108,8 +126,10 @@
     </style>
 </head>
 <body>
-    <!-- Welcome Animation -->
-    <div id="welcome-overlay">
+    <!-- Curtain Opening Animation -->
+    <div id="curtain-overlay">
+        <div id="curtain-left"></div>
+        <div id="curtain-right"></div>
         <div id="welcome-text">Welcome to My Portfolio</div>
     </div>
 
@@ -175,6 +195,12 @@
             body.classList.toggle('dark-mode');
             darkModeToggle.textContent = body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
         });
+
+        // Remove Curtain After Animation
+        const curtainOverlay = document.getElementById('curtain-overlay');
+        setTimeout(() => {
+            curtainOverlay.style.display = 'none';
+        }, 3000); // Match the duration of the curtain animation
     </script>
 </body>
 </html>
